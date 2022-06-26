@@ -1,0 +1,48 @@
+name:                logout-mgr
+version:             0.1.0.0
+github:              "brunerm99/logout-mgr"
+license:             BSD3
+author:              "Marshall Bruner"
+maintainer:          "brunerm99@gmail.com"
+copyright:           "2022 Marshall Bruner"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/brunerm99/logout-mgr#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  logout-mgr-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - logout-mgr
+
+tests:
+  logout-mgr-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - logout-mgr
